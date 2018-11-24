@@ -1,15 +1,18 @@
 package app;
 
-import clotheFactory.ClothesBlue;
-import clotheFactory.ClothesFactory;
+import factoryBlue.TshirtBlue;
+import factoryBlue.FactoryBlue;
+import factoryWhite.FactoryWhite;
 import interfaces.IFactory;
 
 public class Main {
     public static void main(String[] args) {
-        IFactory factoryOne = new ClothesFactory();
-        factoryOne.createClothesBlue();
+        IFactory factoryOne = new FactoryBlue();
+        factoryOne.createClothes();
         
-        IFactory factoryTwo = new ClothesFactory();
-        factoryTwo.createClothesWhite();
+        System.out.println("**************************************");
+        
+        IFactory factoryTwo = new FactoryWhite();
+        factoryTwo.createClothes();
     }
 }
