@@ -6,7 +6,7 @@ import interfaces.ISmartphone;
 
 public class Main {
     public static void main(String[] args) {
-        ISmartphone smartphone = new FactoryNokia();
+        ISmartphone smartphone = new FactorySamsung();
         smartphone.createSmartphone();
     }
 }
