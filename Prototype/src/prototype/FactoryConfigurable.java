@@ -10,13 +10,22 @@ public class FactoryConfigurable {
         this.prototypes = new HashMap<>();
     }
     
+    public IPrototype create(String name){
+        if(this.prototypes.containsKey(name))
+            return prototypes.get(name).clone();
+        return null;
+    }
+    
     public boolean registerPrototype(String namePrototype, IPrototype prototype){
         return (prototypes.put(namePrototype, prototype) == null) ? true : false;
     }
     
     public boolean unregisterPrototype(String namePrototype){
-        prototypes.remove(namePrototype);
-        return true;
+        if(this.prototypes.containsKey(namePrototype)){
+           prototypes.remove(namePrototype);
+           return true;
+        }
+        return false;
     }
     
     public boolean clear(){
